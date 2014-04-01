@@ -11,10 +11,14 @@ namespace MCNugget_Assignment
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.calculateMCNuggets(31);
+            program.readInput();
+
             Console.ReadLine();
         }
 
+        /* This method calculates the amount of boxes of each type are required to package all the nuggets.
+         * @param numberOfNuggets :The number of nuggets that need packaging.
+         */
         public void calculateMCNuggets(int numberOfNuggets)
         {
             int numberOfSolutions = 0;
@@ -39,6 +43,26 @@ namespace MCNugget_Assignment
                     }
                 }
             }
+        }
+
+        /* This method reads the user input and starts the MCNugget calculation.
+         */
+        public void readInput()
+        {
+            Console.Write("Enter the amount of nuggets: ");
+            string input = Console.ReadLine();
+            int numberOfNuggets;
+
+            bool result = Int32.TryParse(input, out numberOfNuggets);
+            if (result && numberOfNuggets != 1 && numberOfNuggets != 2 && numberOfNuggets != 3 && numberOfNuggets != 5 && numberOfNuggets != 7 && numberOfNuggets != 11)
+            {
+                calculateMCNuggets(numberOfNuggets);
+            }
+            else
+            {
+                Console.WriteLine("The input is incorrect or is a number that can't be boxed!");
+            }
+            readInput();
         }
     }
 }
