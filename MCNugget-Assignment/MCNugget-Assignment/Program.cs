@@ -38,6 +38,7 @@ namespace MCNugget_Assignment
                                 Console.WriteLine("Number of 6 nugget boxes: " + nOf6);
                                 Console.WriteLine("Number of 9 nugget boxes: " + nOf9);
                                 Console.WriteLine("Number of 20 nugget boxes: " + nOf20 + "\n");
+                                return;
                             }
                         }
                     }
